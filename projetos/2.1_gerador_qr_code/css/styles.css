@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #43186b;
+}
+
+.container {
+  background-color: #fff;
+  width: 500px;
+  border-radius: 2px;
+  padding: 2rem;
+  box-shadow: 0 0 10px #00000063;
+  transition: 0.5s;
+}
+
+#qr-header {
+  text-align: center;
+}
+
+.qr-header-title {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+#qr-header #icon {
+  width: 60px;
+}
+
+#qr-header h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+#qr-header p {
+  color: #7e7e7e;
+  font-size: 0.9rem;
+}
+
+.container #qr-form {
+  margin: 20px 0;
+}
+
+#qr-form input,
+#qr-form button {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+#qr-form input {
+  border: 1px solid #d3d3d3;
+  padding: 1rem 1rem;
+  background-color: #e6e6e6;
+  transition: padding-left 0.3s;
+}
+
+#qr-form input:focus {
+  padding-left: 1.5rem;
+}
+
+#qr-form input::placeholder {
+  font-weight: bolder;
+  color: #9b9b9b;
+}
+
+#qr-form button {
+  background-color: #2a1ec9;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+
+#qr-form button:hover {
+  opacity: 1;
+}
+
+.container #qr-code {
+  display: none;
+  pointer-events: none;
+  border: 1px solid #e2e2e2;
+  padding: 30px 0;
+  margin: 20px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.active #qr-code {
+  display: flex;
+  pointer-events: auto;
+  transition: 0.5s;
+}
