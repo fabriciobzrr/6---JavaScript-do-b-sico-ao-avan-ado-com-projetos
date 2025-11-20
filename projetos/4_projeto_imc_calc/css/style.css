@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #06080c;
+  background-color: #111;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +21,9 @@ body {
 .container {
   min-width: 400px;
   min-height: 400px;
-  background-color: #1d1e33;
+  background-color: #000;
   padding: 2rem;
+  border-left: 20px solid rgb(54, 54, 54);
 }
 
 #calc-container h2 {
@@ -45,12 +46,29 @@ body {
 
 .form-control label {
   font-weight: bold;
+  font-size: 0.8rem;
   margin-bottom: 0.5rem;
   color: #ccc;
 }
 
 .form-control input {
   padding: 1rem 0.5rem;
+  background-color: #242424;
+  border: 3px solid transparent;
+  color: #fff;
+  outline: none;
+  transition: 0.2s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-control input::placeholder {
+  color: #666;
+}
+
+.form-control input:focus {
+  border-bottom: 3px solid blue;
+  padding-left: 0.8rem;
 }
 
 .action-control {
@@ -64,24 +82,36 @@ button {
   text-transform: uppercase;
   padding: 1rem 1.5rem;
   font-weight: bold;
-  background-color: rgb(0, 36, 136);
+  background-color: #002488;
   color: #fff;
   cursor: pointer;
-  transition: 0.4s;
+  transition: background-color 0.3s;
   flex: 1;
   border: none;
 }
 
+#calc-btn:focus {
+  outline: 3px solid #464666;
+}
+
+#clear-btn:focus {
+  outline: 3px solid #002488;
+}
+
+#back-btn:focus {
+  outline: 3px solid #464666;
+}
+
 button:hover {
-  background-color: rgb(85, 82, 255);
+  background-color: #464666;
 }
 
 #clear-btn {
-  background-color: rgb(70, 70, 102);
+  background-color: #464666;
 }
 
 #clear-btn:hover {
-  background-color: rgb(86, 86, 122);
+  background-color: #002488;
 }
 
 /* Table */
