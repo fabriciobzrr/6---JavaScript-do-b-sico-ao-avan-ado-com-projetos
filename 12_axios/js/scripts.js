@@ -1,86 +1,68 @@
-// 1 - instalando o axios
-console.log(axios);
+// 1 - instalação
+// console.log(axios)
 
 // 2 - primeiro request
+
 const getData = async () => {
   try {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/users",
-      //   4 - definindo headers
-      //   Ver request headers
+    const response = await postsFetch.get(
+      "/users",
+      // 4 - definindo headers
       {
         headers: {
-          "content-type": "application/json",
-          custom: "header",
+          "Content-Type": "application/json",
         },
       }
-    );
-
-    console.log(response);
-
-    return response.data;
+    )
+    console.log(response.data)
+    return response.data
   } catch (error) {
-    console.log(error.response);
+    console.log(error)
   }
-};
+}
+getData()
 
-getData();
-
-// 3 - imprimir dados na tela
-const container = document.querySelector("#user-container");
+// 3 - imprimindo dados na tela
+const divUsers = document.querySelector("#users-content")
 
 const printData = async () => {
-  const data = await getData();
-
-  console.log(data);
+  const data = await getData()
 
   data.forEach((user) => {
-    const div = document.createElement("div");
+    const div = document.createElement("div")
 
-    const nameElement = document.createElement("h2");
+    const nameElement = document.createElement("h3")
+    const emailElement = document.createElement("p")
+    const userElement = document.createElement("p")
 
-    nameElement.textContent = user.name;
+    emailElement.classList.add("email")
+    div.classList.add("user-card")
+    userElement.classList.add("username")
 
-    div.appendChild(nameElement);
+    nameElement.textContent = user.name
+    emailElement.textContent = `Email: ${user.email}`
+    userElement.textContent = `Nome de usuário: ${user.username}`
 
-    const emailElement = document.createElement("p");
+    div.appendChild(nameElement)
+    div.appendChild(emailElement)
+    div.appendChild(userElement)
 
-    emailElement.textContent = user.email;
+    divUsers.appendChild(div)
+  })
+}
 
-    div.appendChild(emailElement);
+printData()
 
-    container.appendChild(div);
-  });
-};
+// 4 - requisição POST
+const form = document.querySelector("#post-form")
+const inputTitle = document.querySelector("#title")
+const textBody = document.querySelector("#body")
 
-printData();
-
-// 5 - post
-const form = document.querySelector("#post-form");
-const titleInput = document.querySelector("#title");
-const bodyInput = document.querySelector("#body");
-
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   axios.post("https://jsonplaceholder.typicode.com/posts", {
-//     body: JSON.stringify({
-//       title: titleInput.value,
-//       body: bodyInput.value,
-//       userId: 1,
-//     }),
-//   });
-// });
-
-// 7 - com custom instance
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
+  e.preventDefault()
   postsFetch.post("/posts", {
-    body: JSON.stringify({
-      title: titleInput.value,
-      body: bodyInput.value,
-      userId: 1,
-    }),
-  });
-});
+    title: inputTitle.value,
+    body: textBody.value,
+    userId: 1,
+  })
+})
