@@ -200,7 +200,7 @@ function nextQuestion() {
       return
     }
     createQuestion(actualQuestion)
-  }, 100)
+  }, 1500)
 }
 
 // Exibe a tela final
