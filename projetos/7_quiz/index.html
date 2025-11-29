@@ -8,6 +8,45 @@
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
-    <h1>AS</h1>
+    <h1 id="main-title">Quizz sobre programação</h1>
+    <!-- Scoreboard do quizz -->
+    <div id="score-container" class="hide">
+      <h2>Parabéns!</h2>
+      <p id="display-score"><span>90</span>%</p>
+      <p>
+        Você acertou <span id="correct-answers">X</span> de
+        <span id="questions-qty">Y</span> perguntas.
+      </p>
+      <button id="restart">Refazer Quizz!</button>
+    </div>
+    <!-- Perguntas do Quizz -->
+    <div id="quizz-container">
+      <p id="question">
+        <span id="question-text">Quantos centímetros tem um metros?</span>
+      </p>
+      <div id="answers-box">
+        <button>
+          <span class="btn-letter">a</span>
+          <span class="question-answer">1</span>
+        </button>
+        <button>
+          <span class="btn-letter">b</span>
+          <span class="question-answer">10</span>
+        </button>
+        <button>
+          <span class="btn-letter">c</span>
+          <span class="question-answer">100</span>
+        </button>
+        <button>
+          <span class="btn-letter">d</span>
+          <span class="question-answer">1000</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Template da resposta do Quizz -->
+    <button class="answer-template hide">
+      <span class="btn-letter">A</span> <span class="question-answer">100</span>
+    </button>
   </body>
 </html>
