@@ -1,0 +1,54 @@
+h1 {
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #ddd;
+  box-shadow: 0 0 5px #00000050;
+  border-radius: 1rem;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: rgb(255, 217, 0);
+  border-radius: 1rem;
+  transition: width 1s ease-in-out;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.controls button {
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.4s;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid rgb(255, 145, 0);
+  background-color: rgb(255, 145, 0);
+  color: #fff;
+}
+
+#previous-btn {
+  background-color: transparent;
+  color: rgb(255, 145, 0);
+}
+
+button:hover {
+  background-color: rgb(161, 91, 0);
+}
