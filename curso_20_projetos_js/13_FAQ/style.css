@@ -1,0 +1,51 @@
+body {
+  font-family: Sora;
+  background-color: #222;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.accordion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-header {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 0 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.accordion-item--active .accordion-header {
+  background-color: #444;
+}
+
+.accordion-item--active .accordion-content {
+  transition: 0.5s;
+  max-height: 1000px;
+}
+
+.accordion-item--closed .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+}
